@@ -58,6 +58,8 @@ void setup() {
   int anotherInt = 98; //You can also declare and define a variable in a single statement. This particular variable is also a local variable, meaning it can only be used inside the setup() function, since it was declared there.
 
   pinMode(LED_PIN, OUTPUT); //:This will initialize LED_PIN to be an output
+
+  Serial.begin(9600); //This will begin serial communication at 9600 bits per second.
 }
 
 
@@ -70,8 +72,11 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   digitalWrite(LED_PIN, ledOn); //Writes the value of ledOn, HIGH, to LED_PIN
+  Serial.println("Turned LED on!"); //Prints message to Serial monitor
   delay(someInt); //pauses the program for someInt milliseconds
+  
   digitalWrite(LED_PIN, ledOff); //Writes the value of ledOff, LOW, to LED)_PIN
+  Serial.println("Turned LED off!");
   delay(someInt);
 
 }
